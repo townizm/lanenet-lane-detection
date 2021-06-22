@@ -10,8 +10,8 @@ Implement LaneNet Model
 """
 import tensorflow as tf
 
-from lanenet_model import lanenet_back_end
-from lanenet_model import lanenet_front_end
+from . import lanenet_back_end
+from . import lanenet_front_end
 from semantic_segmentation_zoo import cnn_basenet
 
 
