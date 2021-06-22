@@ -138,12 +138,19 @@ def test_lanenet(image_path, weights_path):
 
         plt.figure('mask_image')
         plt.imshow(mask_image[:, :, (2, 1, 0)])
+        plt.imsave('mask_image', mask_image[:, :, (2, 1, 0)])
         plt.figure('src_image')
         plt.imshow(image_vis[:, :, (2, 1, 0)])
+        plt.imsave('src_image', image_vis[:, :, (2, 1, 0)])
         plt.figure('instance_image')
         plt.imshow(embedding_image[:, :, (2, 1, 0)])
+        plt.imsave('instance_image', embedding_image[:, :, (2, 1, 0)])
         plt.figure('binary_image')
         plt.imshow(binary_seg_image[0] * 255, cmap='gray')
+        try:
+            plt.imsave('binary_image', binary_seg_image[0] * 255, cmap='gray')
+        except:
+            plt.imsave('binary_image', binary_seg_image[0] * 255)
         plt.show()
 
     sess.close()
